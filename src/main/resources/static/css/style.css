@@ -21,17 +21,17 @@ a {
     text-decoration: none;
 }
 
-.seznam {
+.list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     padding: 2em;
 }
 
-.vizitka {
+.businessCard {
     width: 36em;
     height: 16em;
-    border: 1px solid gray;
+    border: 1px solid rgb(128, 128, 128);
     background-color: white;
     margin: 1em;
     padding: 1.5em;
@@ -42,42 +42,42 @@ a {
     transition: box-shadow 0.2s, transform 0.2s;
 }
 
-.vizitka--nova {
+.businessCard--new {
     background-color: #FFFFFF66;
     border: 3px dotted white;
     justify-content: center;
     align-items: center;
 }
 
-a:hover .vizitka {
+a:hover .businessCard {
     box-shadow: 10px 10px 10px black;
     transform: translate(-5px, -5px);
     transition: box-shadow 0.2s, transform 0.2s;
 }
 
-form.vizitka {
+form.businessCard {
     height: auto;
 }
 
-.jmeno {
+.name {
     font-weight: bold;
     font-size: 18pt;
     text-align: center;
     margin: 1em 0 1em 0;
 }
 
-.firma {
+.company {
     text-align: center;
     margin-bottom: 2em;
 }
 
-.udaje {
+.information {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
-.kontakty {
+.contacts {
     text-align: right;
 }
 
@@ -103,10 +103,10 @@ form.vizitka {
     text-decoration: underline;
 }
 
-.mapa {
+.map {
     width: 36em;
     height: 36em;
-    border: 1px solid gray;
+    border: 1px solid rgb(128, 128, 128);
     margin: 1em;
     box-shadow: 5px 5px 10px black;
 }
@@ -135,4 +135,28 @@ input {
 
 .error {
     color: red;
+}
+
+.errorField {
+    width: 36em;
+    height: 16em;
+    border: 1px solid rgb(128, 128, 128);
+    background-color: white;
+    margin: 1em;
+    padding: 1.5em;
+    box-shadow: 5px 5px 10px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.errorText {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
