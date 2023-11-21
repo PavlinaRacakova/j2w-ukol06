@@ -2,9 +2,11 @@ package cz.czechitas.java2webapps.ukol6.controller;
 
 import cz.czechitas.java2webapps.ukol6.entity.BusinessCard;
 import cz.czechitas.java2webapps.ukol6.repository.BusinessCardRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -51,7 +53,10 @@ public class BusinessCardController {
     }
 
     @PostMapping("/new")
-    public String addNewBusinessCard(@ModelAttribute BusinessCard businessCard) {
+    public Object addNewBusinessCard(@Valid @ModelAttribute BusinessCard businessCard, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
+            return new ModelAndView("newBusinessCard");
+        }
         repository.save(businessCard);
         return "redirect:/";
     }
