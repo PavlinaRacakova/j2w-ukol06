@@ -160,3 +160,17 @@ input {
     align-items: center;
     height: 100%;
 }
+
+.button-like-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: white;
+    cursor: pointer;
+    font-size: 150%;
+}
+
+.button-like-link:hover {
+    text-decoration: underline;
+}

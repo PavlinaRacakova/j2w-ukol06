@@ -60,4 +60,10 @@ public class BusinessCardController {
         repository.save(businessCard);
         return "redirect:/";
     }
+
+    @PostMapping("/delete")
+    public String deleteBusinessCard(int id) {
+        repository.deleteById(id);
+        return "redirect:/";
+    }
 }

@@ -22,5 +22,6 @@
         </div>
 
         [@c.back /]
+        [@c.delete businessCardId=businessCard.getId() /]
     </div>
 [/@c.page]

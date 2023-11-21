@@ -20,6 +20,13 @@
 
 [#macro back]
     <nav>
-        <a href="/">◂ back to the list</a>
+        <a href="/">🡨 Back to the list</a>
     </nav>
+[/#macro]
+
+[#macro delete businessCardId]
+        <form method="post" action="/delete">
+            <input type="hidden" name="id" value="${businessCardId}" />
+            <button class="button-like-link" type="submit">⌫ Delete</button>
+        </form>
 [/#macro]
