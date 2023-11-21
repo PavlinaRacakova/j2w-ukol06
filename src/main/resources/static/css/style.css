@@ -137,21 +137,7 @@ input {
     color: red;
 }
 
-.errorField {
-    width: 36em;
-    height: 16em;
-    border: 1px solid rgb(128, 128, 128);
-    background-color: white;
-    margin: 1em;
-    padding: 1.5em;
-    box-shadow: 5px 5px 10px black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: box-shadow 0.2s, transform 0.2s;
-}
-
-.errorText {
+.error-text {
     text-align: center;
     font-weight: bold;
     font-size: 20px;

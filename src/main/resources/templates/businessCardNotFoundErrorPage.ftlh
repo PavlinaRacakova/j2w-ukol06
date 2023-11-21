@@ -1,8 +1,8 @@
 [#ftl]
 [@c.page]
     <div class="detail">
-        <div class="errorField">
-            <div class="errorText">
+        <div class="businessCard">
+            <div class="error-text">
                 Oops, this business card was not found.
             </div>
         </div>
