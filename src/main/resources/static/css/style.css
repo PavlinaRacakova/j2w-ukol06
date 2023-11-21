@@ -91,7 +91,6 @@ form.businessCard {
 }
 
 .detail nav {
-    margin: 1em;
     font-size: 150%;
 }
 
@@ -159,4 +158,8 @@ input {
 
 .button-like-link:hover {
     text-decoration: underline;
+}
+
+h2 {
+    color: white;
 }

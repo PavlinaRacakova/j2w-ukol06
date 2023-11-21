@@ -1,8 +1,9 @@
 [#ftl]
 
-[#macro form method bind attributes...]
+[#macro form method bind title attributes...]
     [#assign bind = .data_model[bind] ]
     [#assign bindStatus = .data_model["org.springframework.validation.BindingResult.${bind}"] ]
+    <h2>${title}</h2>
     <form method="${method}" novalidate [@attrs attributes /]>
         [#nested ]
     </form>

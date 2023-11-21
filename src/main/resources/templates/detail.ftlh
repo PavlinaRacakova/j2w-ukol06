@@ -21,7 +21,9 @@
             <iframe style="border:none" src="https://frame.mapy.cz/?q=${businessCard.getEntireAddress()?url}" width="100%" height="100%" frameborder="0"></iframe>
         </div>
 
-        [@c.back /]
+        [@c.edit businessCardId=businessCard.getId() /]
         [@c.delete businessCardId=businessCard.getId() /]
+        [@c.back /]
+
     </div>
 [/@c.page]

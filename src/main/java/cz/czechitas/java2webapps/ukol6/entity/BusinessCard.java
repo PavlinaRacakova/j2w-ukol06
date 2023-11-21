@@ -31,7 +31,7 @@ public class BusinessCard {
     @NotBlank
     private String town;
 
-    @Pattern(regexp = "\\d{5}", message="Zip code must be exactly 5 characters long")
+    @Pattern(regexp = "\\d{5}", message = "Zip code must be exactly 5 characters long")
     private String zipCode;
 
     @Email

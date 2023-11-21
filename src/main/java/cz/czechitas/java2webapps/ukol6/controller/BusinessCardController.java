@@ -18,6 +18,8 @@ public class BusinessCardController {
     private final BusinessCardRepository repository;
 
     private final String informationNotProvidedMessage = "n/a";
+    private final String newBusinessCardTitle = "Save new business card";
+    private final String editBusinessCardTitle = "Edit existing business card";
 
     public BusinessCardController(BusinessCardRepository repository) {
         this.repository = repository;
@@ -47,15 +49,16 @@ public class BusinessCardController {
 
     @GetMapping("/new")
     public ModelAndView showNewBusinessCardForm() {
-        ModelAndView result = new ModelAndView("newBusinessCard");
+        ModelAndView result = new ModelAndView("businessCardForm");
         result.addObject("businessCard", new BusinessCard());
+        result.addObject("title", newBusinessCardTitle);
         return result;
     }
 
     @PostMapping("/new")
     public Object addNewBusinessCard(@Valid @ModelAttribute BusinessCard businessCard, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()) {
-            return new ModelAndView("newBusinessCard");
+        if (bindingResult.hasErrors()) {
+            return new ModelAndView("businessCardForm").addObject("title", newBusinessCardTitle);
         }
         repository.save(businessCard);
         return "redirect:/";
@@ -65,5 +68,23 @@ public class BusinessCardController {
     public String deleteBusinessCard(int id) {
         repository.deleteById(id);
         return "redirect:/";
+    }
+
+    @GetMapping("/edit/{id}")
+    public ModelAndView showEditBusinessCardForm(@PathVariable int id) {
+        ModelAndView result = new ModelAndView("businessCardForm");
+        result.addObject("businessCard", repository.findById(id).orElseThrow(
+                () -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
+        result.addObject("title", editBusinessCardTitle);
+        return result;
+    }
+
+    @PostMapping("/edit/{id}")
+    public Object editExistingBusinessCard(@Valid @ModelAttribute BusinessCard businessCard, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ModelAndView("businessCardForm").addObject("title", editBusinessCardTitle);
+        }
+        repository.save(businessCard);
+        return "redirect:/detail/{id}";
     }
 }

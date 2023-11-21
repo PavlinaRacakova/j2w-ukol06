@@ -30,3 +30,9 @@
             <button class="button-like-link" type="submit">⌫ Delete</button>
         </form>
 [/#macro]
+
+[#macro edit businessCardId]
+    <form method="get" action="/edit/${businessCardId}">
+        <button class="button-like-link" type="submit">🖊 Edit</button>
+    </form>
+[/#macro]

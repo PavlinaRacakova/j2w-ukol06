@@ -1,7 +1,7 @@
 [#ftl]
 [@c.page]
     <div class="detail">
-        [@form.form method="post" class="businessCard" bind="businessCard"]
+        [@form.form method="post" class="businessCard" bind="businessCard" title=title]
             [@form.input name="name" label="Full name" maxlength="100" required="required" /]
             [@form.input name="company" label="Company" maxlength="100" required="required" /]
             [@form.input name="street" label="Street & house number" maxlength="100" required="required" /]
@@ -14,7 +14,6 @@
                 <button type="submit">Submit</button>
             </div>
         [/@form.form]
-
         [@c.back /]
     </div>
 [/@c.page]
