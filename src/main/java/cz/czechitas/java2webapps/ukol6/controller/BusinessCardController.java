@@ -1,6 +1,6 @@
 package cz.czechitas.java2webapps.ukol6.controller;
 
-import cz.czechitas.java2webapps.ukol6.Messages;
+import cz.czechitas.java2webapps.ukol6.messages.Messages;
 import cz.czechitas.java2webapps.ukol6.entity.BusinessCard;
 import cz.czechitas.java2webapps.ukol6.repository.BusinessCardRepository;
 import jakarta.validation.Valid;

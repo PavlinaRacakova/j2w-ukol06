@@ -1,4 +1,4 @@
-package cz.czechitas.java2webapps.ukol6;
+package cz.czechitas.java2webapps.ukol6.messages;
 
 public class Messages {
 
